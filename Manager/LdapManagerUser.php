@@ -27,7 +27,7 @@ class LdapManagerUser implements LdapManagerUserInterface
      */
     public function exists($username)
     {
-        $this
+        return $this
             ->setUsername($username)
             ->addLdapUser()
             ;
@@ -48,7 +48,7 @@ class LdapManagerUser implements LdapManagerUserInterface
         } else {
             $this->doPass();
             $this->bindByDn();
-        }        
+        }
     }
 
     /**

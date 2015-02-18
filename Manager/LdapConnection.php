@@ -122,8 +122,10 @@ class LdapConnection implements LdapConnectionInterface
 
         if (null !== $this->ress and null !== $this->lastuse
             and $this->lastuse > $now) {
+            $this->info('use oppened LDAP connexion');
             return $this;
         }
+        $this->info('Open LDAP connexion');
 
         $port = isset($this->params['client']['port'])
             ? $this->params['client']['port']
